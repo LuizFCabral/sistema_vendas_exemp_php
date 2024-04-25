@@ -9,7 +9,7 @@ $bdados="sistema_vendas";			// Nome do banco de dados que se deseja acessar
 //set_time_limit(60);
   
 // Criando a conexão com a base de dados
-$sistema_vendas = mysqli_connect($servidor,$udb,$senha,$bdados);
+$sistemas_vendas = mysqli_connect($servidor,$udb,$senha,$bdados);
 
 // Define a acentuação/tabela de caracteres na origem dos dados
 mysqli_query($sistema_vendas,"SET NAMES utf8");

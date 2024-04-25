@@ -29,17 +29,18 @@
             <th>Ações</th>
         </tr>
         <?php
+        include 'conecta.php';
         // Conexão com o banco de dados
-        $conexao = mysqli_connect("localhost", "usuario", "senha", "sistema_vendas");
+
 
         // Verifica se a conexão foi estabelecida com sucesso
-        if ($conexao === false) {
+        if ($sistemas_vendas === false) {
             die("Erro de conexão: " . mysqli_connect_error());
         }
 
         // Consulta os produtos na tabela
         $sql = "SELECT * FROM produtos";
-        $resultado = mysqli_query($conexao, $sql);
+        $resultado = mysqli_query($sistemas_vendas, $sql);
 
         // Exibe os dados dos produtos em uma tabela HTML
         if (mysqli_num_rows($resultado) > 0) {
@@ -58,7 +59,7 @@
         }
 
         // Fecha a conexão com o banco de dados
-        mysqli_close($conexao);
+        mysqli_close($sistemas_vendas);
         ?>
     </table>
 </body>

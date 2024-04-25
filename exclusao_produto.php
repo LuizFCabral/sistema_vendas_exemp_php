@@ -1,11 +1,13 @@
 <?php
+
+include 'conecta.php';
 // Verifica se o id do produto foi passado via URL
 if (isset($_GET['id_produto'])) {
     // Conexão com o banco de dados
-    $conexao = mysqli_connect("localhost", "usuario", "senha", "sistema_vendas");
+ 
 
     // Verifica se a conexão foi estabelecida com sucesso
-    if ($conexao === false) {
+    if ($sistemas_vendas === false) {
         die("Erro de conexão: " . mysqli_connect_error());
     }
 
@@ -14,7 +16,7 @@ if (isset($_GET['id_produto'])) {
 
     // Consulta o produto na tabela
     $sql = "SELECT * FROM produtos WHERE id_produto = $id_produto";
-    $resultado = mysqli_query($conexao, $sql);
+    $resultado = mysqli_query($sistemas_vendas, $sql);
 
     // Verifica se o produto foi encontrado
     if (mysqli_num_rows($resultado) == 1) {
@@ -32,7 +34,7 @@ if (isset($_GET['id_produto'])) {
     }
 
     // Fecha a conexão com o banco de dados
-    mysqli_close($conexao);
+    mysqli_close($sistemas_vendas);
 } else {
     echo "ID do produto não especificado.";
 }
