@@ -14,11 +14,11 @@ if (isset($_POST["nome_produto"])) {
     
     if (mysqli_query($sistemas_vendas, $sql)) {
         // Salva as fotos do produto na pasta "fotos_produtos"
-        $target_dir = "fotos_produtos/";
-        foreach ($_FILES["fotos_produto"]["tmp_name"] as $key => $tmp_name) {
-            $target_file = $target_dir . basename($_FILES["fotos_produto"]["name"][$key]);
-            move_uploaded_file($tmp_name, $target_file);
-        }
+        // $target_dir = "fotos_produtos/";
+        // foreach ($_FILES["fotos_produto"]["tmp_name"] as $key => $tmp_name) {
+        //     $target_file = $target_dir . basename($_FILES["fotos_produto"]["name"][$key]);
+        //     move_uploaded_file($tmp_name, $target_file);
+        // }
         
         echo "Produto cadastrado com sucesso!";
     } else {
