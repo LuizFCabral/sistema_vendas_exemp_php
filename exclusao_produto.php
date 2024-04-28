@@ -12,7 +12,7 @@
     if (isset($_GET['id_produto'])) {
         $id_produto = $_GET['id_produto'];
         echo "<p>Deseja realmente excluir o produto com ID: $id_produto?</p>";
-        echo "<form action='processa_exclusao_produto.php' method='POST'>";
+        echo "<form action='http://localhost:8080/processa_exclusao_produto.php' method='POST'>";
         echo "<input type='hidden' name='id_produto' value='$id_produto'>";
         echo "<input type='submit' name='confirmacao' value='Sim'>";
         echo "<a href='listagem_produtos.php'>Não</a>";
