@@ -15,7 +15,7 @@
         echo "<form action='http://localhost:8080/processa_exclusao_produto.php' method='POST'>";
         echo "<input type='hidden' name='id_produto' value='$id_produto'>";
         echo "<input type='submit' name='confirmacao' value='Sim'>";
-        echo "<a href='listagem_produtos.php'>Não</a>";
+        echo "<a href='index.php'>Não</a>";
         echo "</form>";
     } else {
         echo "<p>ID do produto não especificado.</p>";

@@ -15,7 +15,7 @@ if (isset($_POST["nome_produto"])) {
     if (mysqli_query($sistemas_vendas, $sql)) {
         echo "Produto cadastrado com sucesso!";
         // Redirecionamento após o cadastro
-        header("Location: listagem_produtos.php");
+        header("Location: index.php");
         exit();
     } else {
         echo "Erro ao cadastrar produto: " . mysqli_error($sistemas_vendas);
