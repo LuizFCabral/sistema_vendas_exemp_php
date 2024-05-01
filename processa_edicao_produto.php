@@ -24,8 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (mysqli_query($sistemas_vendas, $sql)) {
         echo "Produto atualizado com sucesso!";
+
         // Redirecionamento após a edição
-        header("Location: index.php");
+            header("refresh:3; url=index.php");
         exit();
     } else {
         echo "Erro ao atualizar produto: " . mysqli_error($sistemas_vendas);
