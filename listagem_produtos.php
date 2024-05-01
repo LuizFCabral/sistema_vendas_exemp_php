@@ -30,13 +30,6 @@
         </tr>
         <?php
         include 'conecta.php';
-        // Conexão com o banco de dados
-
-
-        // Verifica se a conexão foi estabelecida com sucesso
-        if ($sistemas_vendas === false) {
-            die("Erro de conexão: " . mysqli_connect_error());
-        }
 
         // Consulta os produtos na tabela
         $sql = "SELECT * FROM produtos";
@@ -62,5 +55,7 @@
         mysqli_close($sistemas_vendas);
         ?>
     </table>
+    <br>
+    <a href="cadastro_produtos.php">Cadastrar Novo Produto</a>
 </body>
 </html>

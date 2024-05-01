@@ -1,5 +1,4 @@
 <?php
-
 include 'conecta.php';
 // Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,6 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (mysqli_query($sistemas_vendas, $sql)) {
         echo "Produto atualizado com sucesso!";
+        // Redirecionamento após a edição
+        header("Location: listagem_produtos.php");
+        exit();
     } else {
         echo "Erro ao atualizar produto: " . mysqli_error($sistemas_vendas);
     }

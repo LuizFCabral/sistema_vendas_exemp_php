@@ -10,6 +10,9 @@ if (isset($_POST['id_produto'])) {
 
     if (mysqli_query($sistemas_vendas, $sql)) {
         echo "Produto excluído com sucesso!";
+        // Redirecionamento após a exclusão
+        header("Location: listagem_produtos.php");
+        exit();
     } else {
         echo "Erro ao excluir produto: " . mysqli_error($sistemas_vendas);
     }

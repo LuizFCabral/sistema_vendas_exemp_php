@@ -13,14 +13,10 @@ if (isset($_POST["nome_produto"])) {
     $sql = "INSERT INTO produtos (nome_produto, descricao_produto, preco_produto, codigo_barras, fornecedor_produto, qtd_estoque) VALUES ('$nome_produto', '$descricao_produto', $preco_produto, '$codigo_barras', '$fornecedor_produto', $qtd_estoque)";
     
     if (mysqli_query($sistemas_vendas, $sql)) {
-        // Salva as fotos do produto na pasta "fotos_produtos"
-        // $target_dir = "fotos_produtos/";
-        // foreach ($_FILES["fotos_produto"]["tmp_name"] as $key => $tmp_name) {
-        //     $target_file = $target_dir . basename($_FILES["fotos_produto"]["name"][$key]);
-        //     move_uploaded_file($tmp_name, $target_file);
-        // }
-        
         echo "Produto cadastrado com sucesso!";
+        // Redirecionamento após o cadastro
+        header("Location: listagem_produtos.php");
+        exit();
     } else {
         echo "Erro ao cadastrar produto: " . mysqli_error($sistemas_vendas);
     }
